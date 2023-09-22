@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
 
         <div class="modal-dialog" role="document">
@@ -125,15 +125,15 @@
                     <form action="" method="POST" name="Form" onsubmit="return validateForm()">
                         <div id="Form">
                             <label for="fname">Prenoms</label>
-                            <input type="text" id="fname" name="Prenoms" pattern="^[A-Za-z]+$">
+                            <input type="text" id="fname" name="Prenoms" minlength="4" pattern="^[A-Za-z]+$">
                             <label id="fNom" class="falseM"></label><br>
 
                             <label for="lname">Nom</label>
-                            <input type="text" id="lname" name="Nom" pattern="^[A-Za-z]+$">
+                            <input type="text" id="lname" name="Nom" minlength="4" pattern="^[A-Za-z]+$">
                             <label id="Nom" class="falseM"></label><br>
 
                             <label for="lname">Email</label>
-                            <input type="text" id="lname" name="Email">
+                            <input type="text" id="lname" name="Email" placeholder="johndoe@gmail.com">
                             <label id="femail" class="falseM"></label><br>
 
                             <label for="lname">Date de naissance</label>
@@ -217,6 +217,7 @@
                 buttonM.style.display = "none";
                 //conteinera.style.display = "block";
                 expmodal.style.marginTop = "0px";
+                //expmodal.style.backdropFilter="true";
 
             } else {
                // linkm.style.display ="none";
@@ -228,7 +229,7 @@
                 buttonM.style.display = "block";
                // conteinera.style.display = "none";
                 expmodal.style.marginTop = "0px";
-               // expmodal.style.zIndex="2"
+               // expmodal.style.backdropFilter= "true";
 
             }
         }
@@ -267,7 +268,7 @@
         
         
         if (fname.value == "" || (fname.value.length <= 3)){ 
-          document.getElementById("fNom").innerHTML = "Mettez votre prenoms.";
+          document.getElementById("fNom").innerHTML = "Mettez votre prenoms.([A-Za-z])";
           fname.focus(); 
           return false; 
         }else{
@@ -276,7 +277,7 @@
   
   
         if (name.value == "" || (name.value.length <= 3)){ 
-          document.getElementById("Nom").innerHTML = "Mettez votre nom.";
+          document.getElementById("Nom").innerHTML = "Mettez votre nom.([A-Za-z])";
           name.focus(); 
           return false; 
         }else{

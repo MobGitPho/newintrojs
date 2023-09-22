@@ -60,7 +60,6 @@ html {
   color: white;
   text-decoration: underline;
   border-radius: 5px;
-  margin: 0px 5px 5px 5px;
 }
 
 .header {
@@ -265,8 +264,17 @@ html {
 }
 
 #exampleModalLong {
-  background-color: #ffffff;
+  background-color: transparent;
   overflow: auto;
+  /* &.modal{
+     &.fade{
+         margin-top: 0px;
+         display: block;
+         padding-left: 0px;
+         background-color: transparent;
+
+     }
+   }*/
 }
 
 input[type=text], select, textarea {

@@ -64,7 +64,7 @@ padding: 15px;
           color: $colWhite;
           text-decoration:underline;
           border-radius: 5px;
-          margin: 0px 5px 5px 5px;
+         // margin: 0px 5px 0px 0px;
       }
 
   }
@@ -293,12 +293,23 @@ padding: 15px;
 
 
 
-
+ 
 #exampleModalLong{
-	background-color:#ffffff;
-    overflow: auto;
-    
+	background-color:transparent;
+  overflow: auto;
+ /* &.modal{
+    &.fade{
+        margin-top: 0px;
+        display: block;
+        padding-left: 0px;
+        background-color: transparent;
+ 
+    }
+  }*/
+ 
 }
+
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px; 
