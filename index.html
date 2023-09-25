@@ -248,13 +248,26 @@
       var testdate = document.getElementById('Dtn').value;
 
       var date_regex = /^((0?[1-9]|1[012])[/](0?[1-9]|[12][0-9]|3[01])[/](19|20)?[0-9]{2})*$/;
-
-      if (date_regex.test(testdate) == true) {
-        document.getElementById("fDtn").innerHTML = "";
+      var DtA = new Date();
+      var jr = Dta.getDate();
+      var mth = Dta.getMonth() + 1;
+      var yr = Dta.getFullyear();
+      var moment = require('moment');
+      var cmplt = "";
+      if (testdate === DtA) {
+        if (date_regex.test(testdate) == true) {
+          document.getElementById("fDtn").innerHTML = "";
+        } else {
+          document.getElementById("fDtn").innerHTML = "Vous devez avoir au mois 16 ans pour vous inscrire sur GameOn.";
+        }
       } else {
-        document.getElementById("fDtn").innerHTML = "Mettez une date de naissance valide dd/mm/AAAA.";
+        document.getElementById("fDtn").innerHTML = "Vous devez avoir au mois 16 ans pour vous inscrire sur GameOn.";
       }
+
     }
+
+
+
 
     function validateForm() {
       var Bmod = document.getElementById('btnMod');
@@ -267,7 +280,8 @@
       var checkboxA = document.getElementById("Accept");
       var Form = document.getElementById('Form');
       var FormS = document.getElementById('FormS');
-
+      var DtA = new Date();
+      var yr = DtA.getFullYear();
 
       if (fname.value == "" || (fname.value.length <= 3)) {
         document.getElementById("fNom").innerHTML = "Mettez votre prenoms.([A-Za-z])";
@@ -299,8 +313,20 @@
         Dtn.focus();
         return false;
       } else {
-        document.getElementById("fDtn").innerHTML = "";
+        var udt= new Date(""+Dtn.value+"");
+        var uyr= udt.getFullYear();
+        var Ag = yr - uyr ;
+       
+        if(Ag < 16){
+          document.getElementById("fDtn").innerHTML = "Vous devez avoir au moins 16 ans pour vous inscrire sur GameOn.";
+          Dtn.focus();
+          return false;
+        }else{
+          document.getElementById("fDtn").innerHTML = "";
+        }
+       
       }
+
       if (Cmb.value == "" || isNaN(Cmb.value)) {
         document.getElementById("fCmb").innerHTML = "Mettez un nombre.";
         Cmb.focus();
@@ -327,9 +353,9 @@
       if (Bmod.innerText == "Fermer") {
         var btnMod = document.getElementById("btnMod");
         var expmodal = document.getElementById("examplemodalLong");
-        var conteinera= document.getElementById("conteinera");
-        var lk= window.location.href;
-        window.location.href= ""+lk+"";
+        var conteinera = document.getElementById("conteinera");
+        var lk = window.location.href;
+        window.location.href = "" + lk + "";
 
       }
 
