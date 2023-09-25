@@ -135,7 +135,7 @@
               <label id="Nom" class="falseM"></label><br>
 
               <label for="lname">Email</label>
-              <input type="text" id="lname" name="Email" placeholder="johndoe@gmail.com">
+              <input type="email" id="lname" name="Email" placeholder="johndoe@gmail.com">
               <label id="femail" class="falseM"></label><br>
 
               <label for="lname">Date de naissance</label>
@@ -328,6 +328,8 @@
         var btnMod = document.getElementById("btnMod");
         var expmodal = document.getElementById("examplemodalLong");
         var conteinera= document.getElementById("conteinera");
+        var lk= window.location.href;
+        window.location.href= ""+lk+"";
        // exp.style.display = "none";
         //conteinera.style.display = "block";
         /* bclose.addEventListener("click", function (e) {
@@ -335,13 +337,13 @@
           // exp.style.display="none";
          });*/
         
-        Bmod.forEach((btn) => btn.addEventListener("click", closeModal));
+       /* Bmod.forEach((btn) => btn.addEventListener("click", closeModal));
 
         // launch modal form
         function closeModal() {
        
           exp.style.display = "none";
-        }
+        }*/
       }
 
 

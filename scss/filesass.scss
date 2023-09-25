@@ -331,6 +331,16 @@ input[type=date]{
     resize: vertical ;
 }
 
+input[type=email]{
+  width: 100%;
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+
+  resize: vertical ;
+}
 input[type=number]{
   width: 100%;
   padding: 12px; 
