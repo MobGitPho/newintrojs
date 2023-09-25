@@ -325,14 +325,23 @@
       }
 
       if (Bmod.innerText == "Fermer") {
+        var btnMod = document.getElementById("btnMod");
         var expmodal = document.getElementById("examplemodalLong");
         var conteinera= document.getElementById("conteinera");
-        exp.style.display = "none";
-        conteinera.style.display = "block";
+       // exp.style.display = "none";
+        //conteinera.style.display = "block";
         /* bclose.addEventListener("click", function (e) {
            alert("HOOOH");
           // exp.style.display="none";
          });*/
+        
+        Bmod.forEach((btn) => btn.addEventListener("click", closeModal));
+
+        // launch modal form
+        function closeModal() {
+       
+          exp.style.display = "none";
+        }
       }
 
 
