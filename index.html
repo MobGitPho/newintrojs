@@ -115,9 +115,9 @@
 
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div id="bclose" class="modal-header">
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -142,7 +142,7 @@
                             <label id="fDtn" class="falseM"></label><br>
 
                             <label for="lname">A combien de tournois GameOn avez vous déjà participé?</label>
-                            <input type="text" id="lname" name="Cmb">
+                            <input type="number" min="0" id="lname" name="Cmb">
                             <label id="fCmb" class="falseM"></label><br>
 
                             <label for="lname">A quel tournoi souhaitez-vous participer cette année?</label>
@@ -324,8 +324,13 @@
         }
   
         if(Bmod.innerText =="Fermer"){
-          //Acceuil.link();
-          fermeModal();
+          var expmodal= document.getElementById("examplemodalLong");
+          exp.style.display="none";
+          
+         /* bclose.addEventListener("click", function (e) {
+            alert("HOOOH");
+           // exp.style.display="none";
+          });*/
         }
         
         
@@ -335,7 +340,9 @@
       }
    
      function fermeModal(){
-        window.parent.SqueezeBox.close();
+       // window.parent.SqueezeBox.close();
+       // window.location.href
+       // window.location.assign
       }
 
 
@@ -349,6 +356,8 @@
         var checkboxA =document.getElementById("Accept");   
         var Form= document.getElementById('Form');
         var FormS= document.getElementById('FormS');
+        var bclose = document.getElementById("bclose");
+         
         var chk="";
         
         if(checkboxA.checked){
@@ -363,9 +372,11 @@
           
           Form.style.display = "block";
           FormS.style.display = "none";
+          bclose.style.display="block";
         }else{
           Form.style.display = "none";
           FormS.style.display = "block";
+          bclose.style.display="none";
           document.getElementById("psucces").innerHTML = "Merci pour votre inscription";
           var psucces= document.getElementById('psucces');
           psucces.style.marginTop="200px";
